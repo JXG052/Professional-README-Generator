@@ -26,10 +26,10 @@ inquirer.prompt([
     {
         "type": "input",
         "message": "Enter Something",
-        "name": "test"
+        "name": "title"
     }
 ]).then((response) => {
     console.log(response);
-    fs.writeFile("test.JSON", JSON.stringify(response), (error) =>
+    fs.writeFile("test.md", generateMarkdown(response), (error) =>
     error ? console.error(error) : console.log("success") )
 })
