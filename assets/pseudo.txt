@@ -1,0 +1,8 @@
+Pseudo Code:
+
+User Inputs certain details
+readme file is generated
+
+start by getting answer to one question
+generate it in a readme
+then expand from there
