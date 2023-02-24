@@ -30,6 +30,6 @@ inquirer.prompt([
     }
 ]).then((response) => {
     console.log(response);
-    fs.writeFile("test.txt", "test", (error) =>
+    fs.writeFile("test.JSON", JSON.stringify(response), (error) =>
     error ? console.error(error) : console.log("success") )
 })
