@@ -28,5 +28,8 @@ inquirer.prompt([
         "message": "Enter Something",
         "name": "test"
     }
-]).then((response) => 
-console.log(response))
+]).then((response) => {
+    console.log(response);
+    fs.writeFile("test.txt", "test", (error) =>
+    error ? console.error(error) : console.log("success") )
+})
