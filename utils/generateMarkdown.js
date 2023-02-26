@@ -21,9 +21,9 @@ ${data.installation}
   
 ${data.usage}  
   
-  ![image of deployed site](${data.image})
+  ${data.image}
   
-  [Link to page](${data.link})
+  ${data.link}
   
   
   ## Credits
@@ -31,7 +31,7 @@ ${data.usage}
 ${data.credits}    
  
  ## License
- 
+
  ${data.badge} 
  ${data.license}  
 

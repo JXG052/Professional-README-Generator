@@ -28,6 +28,21 @@ function writeToFile(fileName, data) {
 // // function call to initialize program
 // init();
 
+function fetchLicenseBadge(license) {
+    let badge;
+    switch (license) {
+        case "MIT": 
+            badge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+            break;
+        case "Mozilla":
+            badge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
+            break;
+        case "IBM":
+            badge = `[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)`
+    }
+    return badge;
+}
+
 inquirer.prompt([
     {
         "type": "input",
@@ -68,15 +83,13 @@ inquirer.prompt([
         "type": "list",
         "message": questions[7],
         "name": "license",
-        choices: ['MIT', 'Other License', 'New Licensce'],
+        choices: ['MIT', 'Mozilla', 'IBM'],
     }
 
 ]).then((response) => {
-    console.log(response);
-    response.license === 'MIT' ? response.badge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`: console.log("notMIT");
-    console.log(response);
-    writeToFile("README.md", response)
-    // if response.choices == MIT, display this badge
     
-  
+    let badge = fetchLicenseBadge(response.license)
+    response.badge = badge
+    writeToFile("README.md", response)
+    // if response.choices == MIT, display this badge 
 })
