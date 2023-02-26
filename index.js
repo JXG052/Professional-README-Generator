@@ -7,12 +7,18 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
     "What is the name of your Project?",
     "Enter a Description",
-    "What is this project used for?"
+    "Enter Installation instructions",
+    "Enter Usage instructions",
+    "Enter the relative path of the screenshot that you want to use in the README",
+    "Enter the URL of the deployed site",
+    "Enter what you would like too include in the credits"
 ];
 
 // // function to write README file
-// function writeToFile(fileName, data) {
-// }
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown(data), (error) =>
+    error ? console.error(error) : console.log("success"))
+}
 
 // // function to initialize program
 // function init() {
@@ -25,11 +31,48 @@ const questions = [
 inquirer.prompt([
     {
         "type": "input",
-        "message": "Enter Something",
-        "name": "test"
+        "message": questions[0],
+        "name": "title"
+    },
+    {
+        "type": "input",
+        "message": questions[1],
+        "name": "description"
+    },
+    {
+        "type": "input",
+        "message": questions[2],
+        "name": "installation",
+    },
+    {
+        "type": "input",
+        "message": questions[3],
+        "name": "usage",
+    },
+    {
+        "type": "input",
+        "message": questions[4],
+        "name": "image",
+    },
+    {
+        "type": "input",
+        "message": questions[5],
+        "name": "link",
+    },
+    {
+        "type": "input",
+        "message": questions[6],
+        "name": "credits",
+    },
+    {
+        "type": "list",
+        "message": questions[7],
+        "name": "license",
+        choices: ['MIT', 'Other License', 'New Licensce'],
+    
     }
+
 ]).then((response) => {
     console.log(response);
-    fs.writeFile("test.JSON", JSON.stringify(response), (error) =>
-    error ? console.error(error) : console.log("success") )
+    writeToFile("README.md", response)
 })
