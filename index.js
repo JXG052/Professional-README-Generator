@@ -69,10 +69,12 @@ inquirer.prompt([
         "message": questions[7],
         "name": "license",
         choices: ['MIT', 'Other License', 'New Licensce'],
-    
     }
 
 ]).then((response) => {
     console.log(response);
     writeToFile("README.md", response)
+    console.log(response.choices);
+    // if response.choices == MIT, display this badge
+    response.choices === 'MIT' ? console.log("MIT"): console.log("notMIT");
 })
