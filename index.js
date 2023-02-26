@@ -73,8 +73,10 @@ inquirer.prompt([
 
 ]).then((response) => {
     console.log(response);
+    response.license === 'MIT' ? response.badge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`: console.log("notMIT");
+    console.log(response);
     writeToFile("README.md", response)
-    console.log(response.choices);
     // if response.choices == MIT, display this badge
-    response.choices === 'MIT' ? console.log("MIT"): console.log("notMIT");
+    
+  
 })

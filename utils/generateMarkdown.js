@@ -31,7 +31,8 @@ ${data.usage}
 ${data.credits}    
  
  ## License
-  
+ 
+ ${data.badge} 
  ${data.license}  
 
 `;
