@@ -26,16 +26,25 @@ ${data.usage}
   ${data.link}
   
   
-  ## Credits
+  ## Contributions
   
-${data.credits}    
+${data.credits}   
+
+## Tests
+
+${data.tests}
  
  ## License
 
  ${data.badge} 
  ${data.license}  
 
-`;
+ ## Questions
+
+ ${data.questions}
+
+`
+;
 }
 
 module.exports = generateMarkdown;

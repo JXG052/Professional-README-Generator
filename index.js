@@ -11,7 +11,10 @@ const questions = [
     "Enter Usage instructions",
     "Enter the relative path of the screenshot that you want to use in the README",
     "Enter the URL of the deployed site",
-    "Enter what you would like too include in the credits"
+    "Enter what you would like to include in the credits",
+    "What liicense would you like to use?",
+    "Enter what you would like to include in the tests",
+    "Enter what you would like to include in the questions section"
 ];
 
 // // function to write README file
@@ -84,12 +87,22 @@ inquirer.prompt([
         "message": questions[7],
         "name": "license",
         choices: ['MIT', 'Mozilla', 'IBM'],
-    }
+    },
+    {
+        "type": "input",
+        "message": questions[8],
+        "name": "tests",
+    },
+    {
+        "type": "input",
+        "message": questions[9],
+        "name": "questions",
+    },
 
 ]).then((response) => {
     
     let badge = fetchLicenseBadge(response.license)
     response.badge = badge
     writeToFile("README.md", response)
-    // if response.choices == MIT, display this badge 
+    
 })
