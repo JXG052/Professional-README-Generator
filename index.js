@@ -12,7 +12,7 @@ const questions = [
     "Enter the relative path of the screenshot that you want to use in the README",
     "Enter the URL of the deployed site",
     "Enter what you would like to include in the credits",
-    "What liicense would you like to use?",
+    "What license would you like to use?",
     "Enter what you would like to include in the tests",
     "Enter what you would like to include in the questions section"
 ];
@@ -23,13 +23,7 @@ function writeToFile(fileName, data) {
     error ? console.error(error) : console.log("success"))
 }
 
-// // function to initialize program
-// function init() {
 
-// }
-
-// // function call to initialize program
-// init();
 
 function fetchLicenseBadge(license) {
     let badge;
@@ -100,9 +94,7 @@ inquirer.prompt([
     },
 
 ]).then((response) => {
-    
     let badge = fetchLicenseBadge(response.license)
     response.badge = badge
     writeToFile("README.md", response)
-    
 })
