@@ -1,3 +1,5 @@
-![image of deployed site](/assets/images/screenshot.png)
+My aim for this project was to create an application that will create a README.md file from the command line, saving me from having to start from scratch every time I create a READ ME file. The user will be prompted to provide the contents of the readme file via a series of questions using the inquirer package. Throughout the project, I was able to practice what I learnt in Module 11 of the edx Front End bootcamp, namely, ES6 and Node.js.
 
-[Link to page](https://jxg052.github.io/Weather-Dashboard/)
+/assets/images/screenshot.png
+
+https://jxg052.github.io/Weather-Dashboard/

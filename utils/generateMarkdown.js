@@ -21,9 +21,9 @@ ${data.installation}
   
 ${data.usage}  
   
-  ${data.image}
+ ![image of deployed site](${data.image})
   
-  ${data.link}
+ [Link to page](${data.link})
   
   
   ## Contributions
